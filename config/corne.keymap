@@ -89,10 +89,10 @@
         backspace_delete: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             label = "BACKSPACE_DELETE";
-            bindings = <&hml LC(DELETE) DELETE>, <&hml LC(BACKSPACE) BACKSPACE>;
+            bindings = <&hml LC(BACKSPACE) BACKSPACE>, <&hml LC(DELETE) DELETE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT|MOD_LALT|MOD_RALT)>;
         };
     };
 
@@ -161,19 +161,19 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB         &kp Q         &kp W         &kp E         &hml LC(R) R  &hml LC(T) T        &kp Y             &kp U         &kp I          &kp O       &kp P           &backspace_delete
-&kp LEFT_SHIFT  &hml LC(A) A  &hml LC(S) S  &kp D         &hml LC(F) F  &kp G               &kp H             &kp J         &kp K          &kp L       &kp SEMICOLON   &kp RSHFT
-&hml LWIN ESC   &kp Z         &hml LC(X) X  &hml LC(C) C  &hml LC(V) V  &kp B               &kp N             &kp M         &kp COMMA      &kp PERIOD  &kp UNDERSCORE  &none
-                                            &kp LEFT_ALT  &tkl 2 SPACE  &hml LCTRL ENTER    &hml RCTRL ENTER  &tkr 3 SPACE  &kp RIGHT_ALT
+&hml LEFT_WIN ESC  &kp Q  &kp W  &kp E         &kp R         &kp T               &kp Y             &kp U         &kp I          &kp O       &kp P           &backspace_delete
+&kp LEFT_SHIFT     &kp A  &kp S  &kp D         &kp F         &kp G               &kp H             &kp J         &kp K          &kp L       &kp SEMICOLON   &kp RSHFT
+&kp TAB            &kp Z  &kp X  &kp C         &kp V         &kp B               &kp N             &kp M         &kp COMMA      &kp PERIOD  &kp UNDERSCORE  &kp RIGHT_WIN
+                                 &kp LEFT_ALT  &tkl 2 SPACE  &hml LCTRL ENTER    &hml RCTRL ENTER  &tkr 3 SPACE  &kp RIGHT_ALT
             >;
         };
 
         base_ru {
             bindings = <
-&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE          &kp RU_CYRILLIC_U          &hml LC(R) RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &kp RU_CYRILLIC_ZE  &kp RU_CYRILLIC_E    &trans
-&trans  &hml LC(A) RU_CYRILLIC_EF               &hml LC(S) RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE         &hml LC(F) RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE  &trans
-&trans  &kp RU_CYRILLIC_YA                      &hml LC(X) RU_CYRILLIC_CHE   &hml LC(C) RU_CYRILLIC_ES  &hml LC(C) RU_CYRILLIC_EM  &hml RU_CYRILLIC_SHORT_I RU_CYRILLIC_I    &kp RU_CYRILLIC_TE  &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_HA   &trans
-                                                                             &trans                     &trans                     &trans                                    &trans              &trans                                            &trans
+&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &kp RU_CYRILLIC_ZE  &kp RU_CYRILLIC_E    &trans
+&trans  &kp RU_CYRILLIC_EF                      &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE  &trans
+&trans  &kp RU_CYRILLIC_YA                      &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &hml RU_CYRILLIC_SHORT_I RU_CYRILLIC_I    &kp RU_CYRILLIC_TE  &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_HA   &trans
+                                                                      &trans              &trans              &trans                                    &trans              &trans                                            &trans
             >;
         };
 
