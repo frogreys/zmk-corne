@@ -165,7 +165,7 @@
         mo_navigation: mo_navigation {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&mo 2 &mo 3>;
+            bindings = <&macro_tap>, <&mo 2>, <&macro_tap>, <&mo 3>;
 
             label = "MO_NAVIGATION";
         };
@@ -229,7 +229,7 @@
             bindings = <
 &layer_en  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)     &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &none  &none
 &mo 7      &kp PAGE_DOWN  &mkp RCLK               &mkp MCLK      &mkp LCLK                &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &none  &none
-&layer_ru  &none          &kp LS(LC(TAB))         &none          &kp LC(TAB)              &none               &none             &mkp LCLK          &mkp MCLK          &mkp RCLK         &none  &none
+&layer_ru  &none          &kp LS(LC(TAB))         &none          &kp LC(TAB)              &alt_tab_next       &none             &mkp LCLK          &mkp MCLK          &mkp RCLK         &none  &none
                                                   &layer_ru      &trans                   &layer_en           &layer_ru         &trans             &layer_en
             >;
         };
