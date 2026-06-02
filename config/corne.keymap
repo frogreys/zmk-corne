@@ -153,11 +153,11 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LEFT_ALT>,
-                <&macro_tap_time 450>,
+                <&macro_tap_time 1500>,
                 <&macro_tap>,
-                <&kp TAB>,
-                <&macro_tap>;
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp TAB>;
 
             label = "ALT_TAB_NEXT";
         };
