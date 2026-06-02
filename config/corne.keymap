@@ -152,13 +152,7 @@
         alt_tab_next: alt_tab_next {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_tap_time 1500>,
-                <&macro_tap>,
-                <&kp LEFT_ALT>,
-                <&macro_tap_time 30>,
-                <&macro_tap>,
-                <&kp TAB>;
+            bindings = <&macro_tap>, <&sk LEFT_ALT>, <&macro_tap>, <&kp TAB>;
 
             label = "ALT_TAB_NEXT";
         };
