@@ -228,7 +228,7 @@
 
         on_extra {
             if-layers = <2 3>;
-            then-layer = <5>;
+            then-layer = <6>;
         };
 
         ru_num {
