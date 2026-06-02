@@ -182,7 +182,7 @@
 &kp LC(R)             &kp C_VOLUME_UP    &kp C_PREVIOUS  &kp UP_ARROW    &kp C_NEXT       &msc MOVE_Y(15)     &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
 &trans                &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
 &hml LA(LC(T)) LC(T)  &kp C_MUTE         &kp HOME        &kp C_PLAY      &kp END          &kp LC(SLASH)       &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS         &trans
-                                                         &mo 3           &trans           &trans              &trans  &trans   &trans
+                                                         &mo 3           &trans           &mo 5               &trans  &trans   &trans
             >;
         };
 
@@ -206,10 +206,10 @@
 
         navigation {
             bindings = <
-&none  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)     &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &none  &none
-&mo 6  &kp PAGE_DOWN  &mkp RCLK               &mkp MCLK      &mkp LCLK                &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &none  &none
-&none  &none          &kp LS(LC(TAB))         &none          &kp LC(TAB)              &none               &none             &mkp LCLK          &mkp MCLK          &mkp RCLK         &none  &none
-                                              &layer_ru      &trans                   &layer_en           &layer_ru         &trans             &layer_en
+&layer_en  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)     &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &none  &none
+&mo 6      &kp PAGE_DOWN  &mkp RCLK               &mkp MCLK      &mkp LCLK                &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &none  &none
+&layer_ru  &none          &kp LS(LC(TAB))         &none          &kp LC(TAB)              &none               &none             &mkp LCLK          &mkp MCLK          &mkp RCLK         &none  &none
+                                                  &layer_ru      &trans                   &layer_en           &layer_ru         &trans             &layer_en
             >;
         };
 
