@@ -152,7 +152,8 @@
         layer_combo: layer_combo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&mo 2 &mo 3>;
+            bindings = <&mo 2>, <&macro_tap>, <&mo 3>;
+
             label = "LAYER_COMBO";
         };
     };
