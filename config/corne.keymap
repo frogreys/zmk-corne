@@ -149,10 +149,10 @@
             label = "RU";
         };
 
-        layer_combo: layer_combo {
+        nav_layer_combo: layer_combo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&mo 2>, <&macro_tap>, <&mo 3>;
+            bindings = <&mo 2>, <&macro_press>, <&mo 3>;
 
             label = "LAYER_COMBO";
         };
@@ -190,7 +190,7 @@
 &kp LC(R)             &kp C_VOLUME_UP    &kp C_PREVIOUS  &kp UP_ARROW    &kp C_NEXT       &msc MOVE_Y(15)     &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
 &trans                &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
 &hml LA(LC(T)) LC(T)  &kp C_MUTE         &kp HOME        &kp C_PLAY      &kp END          &kp LC(SLASH)       &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS         &trans
-                                                         &mo 3           &trans           &layer_combo        &trans  &trans   &trans
+                                                         &mo 3           &trans           &nav_layer_combo    &trans  &trans   &trans
             >;
         };
 
