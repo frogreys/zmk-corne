@@ -149,10 +149,10 @@
             label = "RU";
         };
 
-        alt_tab_next: alt_tab_next {
+        alt_esc_next: alt_tab_next {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&sk LEFT_ALT>, <&macro_tap>, <&kp TAB>;
+            bindings = <&macro_tap>, <&sk LEFT_ALT>, <&macro_tap>, <&kp ESC>;
 
             label = "ALT_TAB_NEXT";
         };
@@ -190,7 +190,7 @@
 &kp LC(R)             &kp C_VOLUME_UP    &kp C_PREVIOUS  &kp UP_ARROW    &kp C_NEXT       &msc MOVE_Y(15)     &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
 &trans                &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
 &hml LA(LC(T)) LC(T)  &kp C_MUTE         &kp HOME        &kp C_PLAY      &kp END          &kp LC(SLASH)       &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS         &trans
-                                                         &mo 3           &trans           &mo 6               &trans  &trans   &trans
+                                                         &mo 3           &trans           &mo 7               &trans  &trans   &trans
             >;
         };
 
@@ -212,12 +212,21 @@
             >;
         };
 
-        navigation {
+        navigation_en {
             bindings = <
-&layer_en  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)     &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &none  &none
-&mo 7      &kp PAGE_DOWN  &mkp RCLK               &mkp MCLK      &mkp LCLK                &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &none  &none
-&layer_ru  &none          &kp LS(LC(TAB))         &none          &kp LC(TAB)              &alt_tab_next       &none             &mkp LCLK          &mkp MCLK          &mkp RCLK         &none  &none
-                                                  &layer_ru      &trans                   &layer_en           &layer_ru         &trans             &layer_en
+&backspace_delete  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)     &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &none  &backspace_delete
+&trans             &kp PAGE_DOWN  &kp LC(LEFT_ARROW)      &kp LC(D)      &kp LC(RIGHT_ARROW)      &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &none  &none
+&mo 8              &none          &kp LS(LC(TAB))         &none          &kp LC(TAB)              &alt_esc_next       &none             &mkp LCLK          &mkp MCLK          &mkp RCLK         &none  &none
+                                                          &none          &trans                   &layer_en           &layer_ru         &trans             &none
+            >;
+        };
+
+        navigation_ru {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans       &trans     &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &trans     &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &trans     &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &layer_ru    &layer_en  &trans  &trans
             >;
         };
 
@@ -232,10 +241,10 @@
 
         settings {
             bindings = <
-&none       &none  &none           &none         &none         &none           &bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&none       &none  &none           &none         &none         &none           &bt BT_CLR      &none         &none         &none         &none         &none
-&sys_reset  &none  &studio_unlock  &none         &none         &bootloader     &bootloader     &none         &none         &none         &none         &sys_reset
-                                   &out OUT_USB  &out OUT_TOG  &out OUT_BLE    &bt BT_PRV      &none         &bt BT_NXT
+&soft_off   &none  &none  &none         &none         &studio_unlock    &bt BT_CLR_ALL  &none  &bt BT_SEL 0  &bt BT_SEL 1  &none  &soft_off
+&sys_reset  &none  &none  &none         &none         &none             &bt BT_CLR      &none  &bt BT_SEL 2  &bt BT_SEL 3  &none  &sys_reset
+&none       &none  &none  &none         &none         &bootloader       &bootloader     &none  &bt BT_SEL 4  &none         &none  &none
+                          &out OUT_USB  &out OUT_TOG  &out OUT_BLE      &bt BT_PRV      &none  &bt BT_NXT
             >;
         };
     };
@@ -254,8 +263,13 @@
         };
 
         on_navigation {
-            if-layers = <6>;
+            if-layers = <7>;
             then-layer = <5>;
+        };
+
+        ru_navigation {
+            if-layers = <1 5>;
+            then-layer = <6>;
         };
     };
 };
