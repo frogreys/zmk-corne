@@ -217,16 +217,16 @@
 &backspace_delete  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)     &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &none  &backspace_delete
 &trans             &kp PAGE_DOWN  &kp LC(LEFT_ARROW)      &kp LC(D)      &kp LC(RIGHT_ARROW)      &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &none  &none
 &mo 8              &none          &kp LS(LC(TAB))         &none          &kp LC(TAB)              &alt_esc_next       &none             &mkp LCLK          &mkp MCLK          &mkp RCLK         &none  &none
-                                                          &none          &trans                   &layer_en           &layer_ru         &trans             &none
+                                                          &layer_en      &trans                   &layer_ru           &layer_ru         &trans             &layer_en
             >;
         };
 
         navigation_ru {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans       &trans     &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans       &trans     &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans       &trans     &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &layer_ru    &layer_en  &trans  &trans
+&trans  &trans  &trans  &trans     &trans  &trans       &trans     &trans  &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans  &trans       &trans     &trans  &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans  &trans       &trans     &trans  &trans     &trans  &trans  &trans
+                        &layer_ru  &trans  &layer_en    &layer_en  &trans  &layer_ru
             >;
         };
 
