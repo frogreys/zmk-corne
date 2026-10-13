@@ -15,14 +15,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        mouse {
-            bindings = <&mo 10>;
-            key-positions = <36 41>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     behaviors {
         hml: hml {
@@ -176,55 +169,19 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&hml LEFT_WIN ESC  &kp Q  &kp W  &kp E      &kp R         &kp T                  &kp Y                 &kp U         &kp I      &kp O       &kp P           &backspace_delete
-&kp LEFT_SHIFT     &kp A  &kp S  &kp D      &kp F         &kp G                  &kp H                 &kp J         &kp K      &kp L       &kp SEMICOLON   &kp RSHFT
-&kp TAB            &kp Z  &kp X  &kp C      &kp V         &kp B                  &kp N                 &kp M         &kp COMMA  &kp PERIOD  &kp UNDERSCORE  &kp TAB
-                                 &kp LCTRL  &tkl 2 SPACE  &hml LEFT_ALT ENTER    &hml RIGHT_ALT ENTER  &tkr 3 SPACE  &kp RCTRL
+&hml LEFT_WIN ESC  &kp Q     &kp W  &kp E      &kp R         &kp T                  &kp Y                 &kp U         &kp I      &kp O       &kp P                 &backspace_delete
+&kp LEFT_SHIFT     &kp A     &kp S  &kp D      &kp F         &kp G                  &kp H                 &kp J         &kp K      &kp L       &kp SEMICOLON         &kp RSHFT
+&kp TAB            &tkl 8 Z  &kp X  &kp C      &kp V         &kp B                  &kp N                 &kp M         &kp COMMA  &kp PERIOD  &tkl 9 RU_UNDERSCORE  &layer_ru
+                                    &kp LCTRL  &tkl 8 SPACE  &hml LEFT_ALT ENTER    &hml RIGHT_ALT ENTER  &tkr 9 SPACE  &kp RCTRL
             >;
         };
 
         base_ru {
             bindings = <
-&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &kp RU_CYRILLIC_ZE  &kp RU_CYRILLIC_HA   &trans
-&trans  &kp RU_CYRILLIC_EF                      &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE  &trans
-&trans  &kp RU_CYRILLIC_YA                      &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &hml RU_CYRILLIC_SHORT_I RU_CYRILLIC_I    &kp RU_CYRILLIC_TE  &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_E    &trans
+&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &kp RU_CYRILLIC_ZE  &kp RU_CYRILLIC_HA    &trans
+&trans  &kp RU_CYRILLIC_EF                      &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE   &trans
+&trans  &tkl 8 RU_CYRILLIC_YA                   &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &hml RU_CYRILLIC_SHORT_I RU_CYRILLIC_I    &kp RU_CYRILLIC_TE  &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU  &tkl 9 RU_CYRILLIC_E  &layer_en
                                                                       &trans              &trans              &trans                                    &trans              &trans                                            &trans
-            >;
-        };
-
-        left_navigation {
-            bindings = <
-&kp LC(R)               &kp C_VOLUME_UP    &kp C_PREVIOUS  &kp UP_ARROW    &kp C_NEXT       &msc MOVE_Y(15)       &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
-&trans                  &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc (MOVE_Y(-15))    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
-&hml (LA(LC(T))) LC(T)  &kp C_MUTE         &kp HOME        &kp C_PLAY      &kp END          &kp LC(SLASH)         &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS         &trans
-                                                           &mo 6           &trans           &mo 12                &trans  &trans   &trans
-            >;
-        };
-
-        right_navigation {
-            bindings = <
-&trans  &kp PRINTSCREEN  &kp F1  &kp F2   &kp F3   &kp F4     &msc MOVE_Y(15)     &kp C_PREVIOUS  &kp UP_ARROW    &kp C_NEXT       &kp C_VOLUME_UP    &kp LC(R)
-&trans  &kp INSERT       &kp F5  &kp F6   &kp F7   &kp F8     &msc (MOVE_Y(-15))  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_VOLUME_DOWN  &trans
-&trans  &kp CAPSLOCK     &kp F9  &kp F10  &kp F11  &kp F12    &kp LC(SLASH)       &kp HOME        &kp C_PLAY      &kp END          &kp C_MUTE         &hml (LA(LC(T))) LC(T)
-                                 &trans   &trans   &trans     &mo 12              &trans          &mo 8
-            >;
-        };
-
-        numbs_en {
-            bindings = <
-&kp GRAVE       &kp DOLLAR       &kp AT_SIGN   &kp AMPERSAND  &hml UNDERSCORE MINUS  &kp PLUS                 &kp ASTERISK      &kp SLASH          &kp EQUAL     &kp EXCLAMATION  &kp QUESTION   &trans
-&kp TILDE       &kp N1           &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5             &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0   &kp HASH
-&kp LEFT_BRACE  &kp RIGHT_BRACE  &kp CARET     &kp SEMICOLON  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp COMMA     &kp DOT          &kp LESS_THAN  &kp GREATER_THAN
-                                               &kp PERCENT    &trans                 &kp BACKSLASH            &kp SINGLE_QUOTE  &trans             &ru HASH
-            >;
-        };
-
-        numbs_ru {
-            bindings = <
-&en GRAVE       &en DOLLAR       &en AT_SIGN   &en AMPERSAND  &hml UNDERSCORE MINUS  &en PLUS                 &en ASTERISK      &en SLASH          &en EQUAL     &en EXCLAMATION  &en QUESTION   &trans
-&en TILDE       &kp N1           &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5             &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0   &en HASH
-&en LEFT_BRACE  &en RIGHT_BRACE  &en CARET     &en SEMICOLON  &en LEFT_PARENTHESIS   &en RIGHT_PARENTHESIS    &en LEFT_BRACKET  &en RIGHT_BRACKET  &en COMMA     &en DOT          &en LESS_THAN  &en GREATER_THAN
-                                               &en PERCENT    &trans                 &en BACKSLASH            &en SINGLE_QUOTE  &trans             &kp HASH
             >;
         };
 
@@ -246,15 +203,6 @@
             >;
         };
 
-        right_numbs_en {
-            bindings = <
-&kp GRAVE       &kp DOLLAR        &kp AT_SIGN  &kp AMPERSAND  &hml UNDERSCORE MINUS  &kp PLUS                 &kp ASTERISK      &kp SLASH     &kp EQUAL     &kp EXCLAMATION  &kp QUESTION  &trans
-&kp LEFT_BRACE  &kp RIGHT_BRACE   &kp CARET    &kp SEMICOLON  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS    &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4     &kp NUMBER_5  &kp TILDE
-&kp LESS_THAN   &kp GREATER_THAN  &kp DOT      &kp COMMA      &kp LEFT_BRACKET       &kp RIGHT_BRACKET        &kp NUMBER_6      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0  &kp HASH
-                                               &kp PERCENT    &trans                 &kp BACKSLASH            &kp SINGLE_QUOTE  &trans        &ru HASH
-            >;
-        };
-
         right_numbs_ru {
             bindings = <
 &en GRAVE       &en DOLLAR        &en AT_SIGN  &en AMPERSAND  &hml UNDERSCORE MINUS  &en PLUS                 &en ASTERISK      &en SLASH     &en EQUAL     &en EXCLAMATION  &en QUESTION  &trans
@@ -264,30 +212,57 @@
             >;
         };
 
-        navigation_en {
+        right_numbs_en {
             bindings = <
-&backspace_delete  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)       &msc MOVE_Y(15)     &mkp LCLK            &mmv (MOVE_Y(-500))  &mkp RCLK         &none  &backspace_delete
-&trans             &kp PAGE_DOWN  &kp LC(LEFT_ARROW)      &kp LC(D)      &kp LC(RIGHT_ARROW)      &msc (MOVE_Y(-15))    &msc (MOVE_Y(-15))  &mmv (MOVE_X(-600))  &mmv MOVE_Y(500)     &mmv MOVE_X(600)  &none  &none
-&mo 13             &none          &kp LS(LC(TAB))         &none          &kp LC(TAB)              &alt_esc_next         &none               &mkp LCLK            &mkp MCLK            &mkp RCLK         &none  &none
-                                                          &trans         &layer_ru                &trans                &trans              &layer_ru            &trans
+&kp GRAVE       &kp DOLLAR        &kp AT_SIGN  &kp AMPERSAND  &hml UNDERSCORE MINUS  &kp PLUS                 &kp ASTERISK      &kp SLASH     &kp EQUAL     &kp EXCLAMATION  &kp QUESTION  &trans
+&kp LEFT_BRACE  &kp RIGHT_BRACE   &kp CARET    &kp SEMICOLON  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS    &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4     &kp NUMBER_5  &kp TILDE
+&kp LESS_THAN   &kp GREATER_THAN  &kp DOT      &kp COMMA      &kp LEFT_BRACKET       &kp RIGHT_BRACKET        &kp NUMBER_6      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0  &kp HASH
+                                               &kp PERCENT    &trans                 &kp BACKSLASH            &kp SINGLE_QUOTE  &trans        &ru HASH
             >;
         };
 
-        navigation_ru {
+        numbs_en {
             bindings = <
-&trans  &trans  &trans  &trans     &trans  &trans       &trans     &trans  &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans  &trans       &trans     &trans  &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans  &trans       &trans     &trans  &trans     &trans  &trans  &trans
-                        &layer_ru  &trans  &layer_en    &layer_en  &trans  &layer_ru
+&kp GRAVE       &kp DOLLAR       &kp AT_SIGN   &kp AMPERSAND  &hml UNDERSCORE MINUS  &kp PLUS                 &kp ASTERISK      &kp SLASH          &kp EQUAL     &kp EXCLAMATION  &kp QUESTION   &trans
+&kp TILDE       &kp N1           &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5             &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0   &kp HASH
+&kp LEFT_BRACE  &kp RIGHT_BRACE  &kp CARET     &kp SEMICOLON  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp COMMA     &kp DOT          &kp LESS_THAN  &kp GREATER_THAN
+                                               &kp PERCENT    &trans                 &kp BACKSLASH            &kp SINGLE_QUOTE  &trans             &ru HASH
             >;
         };
 
-        navigation_alt {
+        numbs_ru {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&en GRAVE       &en DOLLAR       &en AT_SIGN   &en AMPERSAND  &hml UNDERSCORE MINUS  &en PLUS                 &en ASTERISK      &en SLASH          &en EQUAL     &en EXCLAMATION  &en QUESTION   &trans
+&en TILDE       &kp N1           &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5             &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0   &en HASH
+&en LEFT_BRACE  &en RIGHT_BRACE  &en CARET     &en SEMICOLON  &en LEFT_PARENTHESIS   &en RIGHT_PARENTHESIS    &en LEFT_BRACKET  &en RIGHT_BRACKET  &en COMMA     &en DOT          &en LESS_THAN  &en GREATER_THAN
+                                               &en PERCENT    &trans                 &en BACKSLASH            &en SINGLE_QUOTE  &trans             &kp HASH
+            >;
+        };
+
+        left_navigation {
+            bindings = <
+&backspace_delete     &kp C_VOLUME_UP    &kp C_PREVIOUS                  &hml LC(UP_ARROW) UP_ARROW      &kp C_NEXT                        &msc MOVE_Y(15)     &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
+&trans                &kp C_VOLUME_DOWN  &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
+&hml LA(LC(T)) LC(T)  &trans             &kp HOME                        &kp C_PLAY                      &kp END                           &kp LC(SLASH)       &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS         &trans
+                                                                         &trans                          &trans                            &trans              &trans  &trans   &trans
+            >;
+        };
+
+        right_navigation {
+            bindings = <
+&trans  &kp PRINTSCREEN  &kp F1  &kp F2   &kp F3   &kp F4     &msc MOVE_Y(15)   &kp C_PREVIOUS                  &hml LC(UP_ARROW) UP_ARROW      &kp C_NEXT                        &kp C_VOLUME_UP    &trans
+&trans  &kp INSERT       &kp F5  &kp F6   &kp F7   &kp F8     &msc MOVE_Y(-15)  &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &kp C_VOLUME_DOWN  &trans
+&trans  &kp CAPSLOCK     &kp F9  &kp F10  &kp F11  &kp F12    &kp LC(SLASH)     &kp HOME                        &kp C_PLAY                      &kp END                           &trans             &hml LA(LC(T)) LC(T)
+                                 &trans   &trans   &trans     &trans            &trans                          &trans
+            >;
+        };
+
+        mouse {
+            bindings = <
+&backspace_delete  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)     &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &none   &backspace_delete
+&trans             &kp PAGE_DOWN  &kp LC(LEFT_ARROW)      &kp LC(D)      &kp LC(RIGHT_ARROW)      &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &none   &none
+&mo 11             &trans         &kp LS(LC(TAB))         &none          &kp LC(TAB)              &alt_esc_next       &alt_esc_next     &mkp LCLK          &mkp MCLK          &mkp RCLK         &trans  &none
+                                                          &trans         &trans                   &trans              &trans            &trans             &trans
             >;
         };
 
@@ -305,33 +280,38 @@
         compatible = "zmk,conditional-layers";
 
         ru_num {
-            if-layers = <1 4>;
-            then-layer = <5>;
+            if-layers = <1 6>;
+            then-layer = <7>;
         };
 
         on_navigation {
-            if-layers = <12>;
+            if-layers = <11>;
             then-layer = <10>;
         };
 
         ru_navigation {
             if-layers = <1 10>;
-            then-layer = <11>;
+            then-layer = <1>;
         };
 
         left_ru_num {
-            if-layers = <1 6>;
-            then-layer = <7>;
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
 
         right_num_ru {
-            if-layers = <1 8>;
-            then-layer = <9>;
+            if-layers = <1 5>;
+            then-layer = <4>;
         };
 
         on_numbs {
-            if-layers = <2 3>;
-            then-layer = <4>;
+            if-layers = <8 9>;
+            then-layer = <6>;
+        };
+
+        on_mouse {
+            if-layers = <8 9>;
+            then-layer = <10>;
         };
     };
 };
