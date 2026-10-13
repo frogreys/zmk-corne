@@ -15,7 +15,14 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        mouse {
+            bindings = <&mo 10>;
+            key-positions = <36 41>;
+        };
+    };
 
     behaviors {
         hml: hml {
@@ -172,7 +179,7 @@
 &hml LEFT_WIN ESC  &kp Q  &kp W  &kp E      &kp R         &kp T                  &kp Y                 &kp U         &kp I      &kp O       &kp P           &backspace_delete
 &kp LEFT_SHIFT     &kp A  &kp S  &kp D      &kp F         &kp G                  &kp H                 &kp J         &kp K      &kp L       &kp SEMICOLON   &kp RSHFT
 &kp TAB            &kp Z  &kp X  &kp C      &kp V         &kp B                  &kp N                 &kp M         &kp COMMA  &kp PERIOD  &kp UNDERSCORE  &kp TAB
-                                 &kp LCTRL  &tkl 2 SPACE  &hml LEFT_ALT ENTER    &hml RIGHT_ALT ENTER  &tkr 4 SPACE  &kp RCTRL
+                                 &kp LCTRL  &tkl 2 SPACE  &hml LEFT_ALT ENTER    &hml RIGHT_ALT ENTER  &tkr 3 SPACE  &kp RCTRL
             >;
         };
 
@@ -185,48 +192,84 @@
             >;
         };
 
-        left_functional {
+        left_navigation {
             bindings = <
-&kp LC(R)             &kp C_VOLUME_UP    &kp C_PREVIOUS  &kp UP_ARROW    &kp C_NEXT       &msc MOVE_Y(15)     &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
-&trans                &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
-&hml LA(LC(T)) LC(T)  &kp C_MUTE         &kp HOME        &kp C_PLAY      &kp END          &kp LC(SLASH)       &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS         &trans
-                                                         &mo 4           &trans           &mo 8               &trans  &trans   &trans
+&kp LC(R)               &kp C_VOLUME_UP    &kp C_PREVIOUS  &kp UP_ARROW    &kp C_NEXT       &msc MOVE_Y(15)       &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
+&trans                  &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc (MOVE_Y(-15))    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
+&hml (LA(LC(T))) LC(T)  &kp C_MUTE         &kp HOME        &kp C_PLAY      &kp END          &kp LC(SLASH)         &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS         &trans
+                                                           &mo 6           &trans           &mo 12                &trans  &trans   &trans
             >;
         };
 
-        functional_right {
+        right_navigation {
             bindings = <
-&trans  &kp PRINTSCREEN  &kp F1  &kp F2   &kp F3   &kp F4     &msc MOVE_Y(15)   &kp C_PREVIOUS  &kp UP_ARROW    &kp C_NEXT       &kp C_VOLUME_UP    &kp LC(R)
-&trans  &kp INSERT       &kp F5  &kp F6   &kp F7   &kp F8     &msc MOVE_Y(-15)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_VOLUME_DOWN  &trans
-&trans  &kp CAPSLOCK     &kp F9  &kp F10  &kp F11  &kp F12    &kp LC(SLASH)     &kp HOME        &kp C_PLAY      &kp END          &kp C_MUTE         &hml LA(LC(T)) LC(T)
-                                 &trans   &trans   &trans     &trans            &trans          &trans
+&trans  &kp PRINTSCREEN  &kp F1  &kp F2   &kp F3   &kp F4     &msc MOVE_Y(15)     &kp C_PREVIOUS  &kp UP_ARROW    &kp C_NEXT       &kp C_VOLUME_UP    &kp LC(R)
+&trans  &kp INSERT       &kp F5  &kp F6   &kp F7   &kp F8     &msc (MOVE_Y(-15))  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_VOLUME_DOWN  &trans
+&trans  &kp CAPSLOCK     &kp F9  &kp F10  &kp F11  &kp F12    &kp LC(SLASH)       &kp HOME        &kp C_PLAY      &kp END          &kp C_MUTE         &hml (LA(LC(T))) LC(T)
+                                 &trans   &trans   &trans     &mo 12              &trans          &mo 8
             >;
         };
 
-        numbers_symbols_en {
+        numbs_en {
             bindings = <
-&kp GRAVE  &kp DOLLAR    &kp AT_SIGN   &kp PRCNT          &kp CARET     &kp AMPS         &kp HASH              &kp EXCLAMATION        &kp QMARK         &kp EQUAL          &kp NON_US_BACKSLASH  &trans
-&trans     &kp N1        &kp NUMBER_2  &kp NUMBER_3       &kp NUMBER_4  &kp NUMBER_5     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS              &hml UNDER MINUS
-&kp TILDE  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8       &kp NUMBER_9  &kp NUMBER_0     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LESS_THAN     &kp GREATER_THAN   &kp ASTERISK          &kp SLASH
-                                       &hml COMMA KP_DOT  &trans        &kp SEMICOLON    &kp SINGLE_QUOTE      &trans                 &ru HASH
+&kp GRAVE       &kp DOLLAR       &kp AT_SIGN   &kp AMPERSAND  &hml UNDERSCORE MINUS  &kp PLUS                 &kp ASTERISK      &kp SLASH          &kp EQUAL     &kp EXCLAMATION  &kp QUESTION   &trans
+&kp TILDE       &kp N1           &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5             &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0   &kp HASH
+&kp LEFT_BRACE  &kp RIGHT_BRACE  &kp CARET     &kp SEMICOLON  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp COMMA     &kp DOT          &kp LESS_THAN  &kp GREATER_THAN
+                                               &kp PERCENT    &trans                 &kp BACKSLASH            &kp SINGLE_QUOTE  &trans             &ru HASH
             >;
         };
 
-        numbers_symbols_ru {
+        numbs_ru {
             bindings = <
-&en GRAVE  &en DOLLAR  &en AT_SIGN  &en PERCENT           &en CARET  &en AMPS         &en HASH              &en EXCLAMATION        &en QMARK         &en EQUAL          &en NON_US_BACKSLASH  &trans
-&trans     &trans      &trans       &trans                &trans     &trans           &en LEFT_PARENTHESIS  &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &en PLUS              &hml UNDER MINUS
-&en TILDE  &trans      &trans       &trans                &trans     &trans           &en LEFT_BRACE        &en RIGHT_BRACE        &en LESS_THAN     &en GREATER_THAN   &en ASTERISK          &en SLASH
-                                    &hml RU_COMMA RU_DOT  &trans     &en SEMICOLON    &en SINGLE_QUOTE      &trans                 &kp HASH
+&en GRAVE       &en DOLLAR       &en AT_SIGN   &en AMPERSAND  &hml UNDERSCORE MINUS  &en PLUS                 &en ASTERISK      &en SLASH          &en EQUAL     &en EXCLAMATION  &en QUESTION   &trans
+&en TILDE       &kp N1           &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5             &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0   &en HASH
+&en LEFT_BRACE  &en RIGHT_BRACE  &en CARET     &en SEMICOLON  &en LEFT_PARENTHESIS   &en RIGHT_PARENTHESIS    &en LEFT_BRACKET  &en RIGHT_BRACKET  &en COMMA     &en DOT          &en LESS_THAN  &en GREATER_THAN
+                                               &en PERCENT    &trans                 &en BACKSLASH            &en SINGLE_QUOTE  &trans             &kp HASH
+            >;
+        };
+
+        left_numbs_en {
+            bindings = <
+&kp GRAVE  &kp DOLLAR    &kp AT_SIGN   &kp AMPERSAND  &hml UNDERSCORE MINUS  &kp PLUS         &kp ASTERISK          &kp SLASH              &kp EQUAL      &kp EXCLAMATION  &kp QUESTION    &trans
+&kp TILDE  &kp N1        &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp CARET        &kp LEFT_BRACE  &kp RIGHT_BRACE
+&kp HASH   &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9           &kp NUMBER_0     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp COMMA      &kp DOT          &kp LESS_THAN   &kp GREATER_THAN
+                                       &kp PERCENT    &trans                 &kp BACKSLASH    &kp SINGLE_QUOTE      &trans                 &ru HASH
+            >;
+        };
+
+        left_numbs_ru {
+            bindings = <
+&en GRAVE  &en DOLLAR    &en AT_SIGN   &en AMPERSAND  &hml UNDERSCORE MINUS  &en PLUS         &en ASTERISK          &en SLASH              &en EQUAL      &en EXCLAMATION  &en QUESTION    &trans
+&en TILDE  &kp N1        &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5     &en LEFT_PARENTHESIS  &en RIGHT_PARENTHESIS  &en SEMICOLON  &en CARET        &en LEFT_BRACE  &en RIGHT_BRACE
+&en HASH   &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9           &kp NUMBER_0     &en LEFT_BRACKET      &en RIGHT_BRACKET      &en COMMA      &en DOT          &en LESS_THAN   &en GREATER_THAN
+                                       &en PERCENT    &trans                 &en BACKSLASH    &en SINGLE_QUOTE      &trans                 &kp HASH
+            >;
+        };
+
+        right_numbs_en {
+            bindings = <
+&kp GRAVE       &kp DOLLAR        &kp AT_SIGN  &kp AMPERSAND  &hml UNDERSCORE MINUS  &kp PLUS                 &kp ASTERISK      &kp SLASH     &kp EQUAL     &kp EXCLAMATION  &kp QUESTION  &trans
+&kp LEFT_BRACE  &kp RIGHT_BRACE   &kp CARET    &kp SEMICOLON  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS    &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4     &kp NUMBER_5  &kp TILDE
+&kp LESS_THAN   &kp GREATER_THAN  &kp DOT      &kp COMMA      &kp LEFT_BRACKET       &kp RIGHT_BRACKET        &kp NUMBER_6      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0  &kp HASH
+                                               &kp PERCENT    &trans                 &kp BACKSLASH            &kp SINGLE_QUOTE  &trans        &ru HASH
+            >;
+        };
+
+        right_numbs_ru {
+            bindings = <
+&en GRAVE       &en DOLLAR        &en AT_SIGN  &en AMPERSAND  &hml UNDERSCORE MINUS  &en PLUS                 &en ASTERISK      &en SLASH     &en EQUAL     &en EXCLAMATION  &en QUESTION  &trans
+&en LEFT_BRACE  &en RIGHT_BRACE   &en CARET    &en SEMICOLON  &en LEFT_PARENTHESIS   &en RIGHT_PARENTHESIS    &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4     &kp NUMBER_5  &en TILDE
+&en LESS_THAN   &en GREATER_THAN  &en DOT      &en COMMA      &en LEFT_BRACKET       &en RIGHT_BRACKET        &kp NUMBER_6      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0  &en HASH
+                                               &en PERCENT    &trans                 &en BACKSLASH            &en SINGLE_QUOTE  &trans        &kp HASH
             >;
         };
 
         navigation_en {
             bindings = <
-&backspace_delete  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)     &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &none  &backspace_delete
-&trans             &kp PAGE_DOWN  &kp LC(LEFT_ARROW)      &kp LC(D)      &kp LC(RIGHT_ARROW)      &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &none  &none
-&mo 9              &none          &kp LS(LC(TAB))         &none          &kp LC(TAB)              &alt_esc_next       &none             &mkp LCLK          &mkp MCLK          &mkp RCLK         &none  &none
-                                                          &layer_en      &trans                   &layer_ru           &layer_ru         &trans             &layer_en
+&backspace_delete  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)       &msc MOVE_Y(15)     &mkp LCLK            &mmv (MOVE_Y(-500))  &mkp RCLK         &none  &backspace_delete
+&trans             &kp PAGE_DOWN  &kp LC(LEFT_ARROW)      &kp LC(D)      &kp LC(RIGHT_ARROW)      &msc (MOVE_Y(-15))    &msc (MOVE_Y(-15))  &mmv (MOVE_X(-600))  &mmv MOVE_Y(500)     &mmv MOVE_X(600)  &none  &none
+&mo 13             &none          &kp LS(LC(TAB))         &none          &kp LC(TAB)              &alt_esc_next         &none               &mkp LCLK            &mkp MCLK            &mkp RCLK         &none  &none
+                                                          &trans         &layer_ru                &trans                &trans              &layer_ru            &trans
             >;
         };
 
@@ -261,24 +304,34 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        on_extra {
-            if-layers = <2 4>;
-            then-layer = <6>;
-        };
-
         ru_num {
             if-layers = <1 4>;
             then-layer = <5>;
         };
 
         on_navigation {
-            if-layers = <8>;
-            then-layer = <6>;
+            if-layers = <12>;
+            then-layer = <10>;
         };
 
         ru_navigation {
+            if-layers = <1 10>;
+            then-layer = <11>;
+        };
+
+        left_ru_num {
             if-layers = <1 6>;
             then-layer = <7>;
+        };
+
+        right_num_ru {
+            if-layers = <1 8>;
+            then-layer = <9>;
+        };
+
+        on_numbs {
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
 };
