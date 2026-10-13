@@ -243,7 +243,7 @@
             bindings = <
 &backspace_delete     &kp C_VOLUME_UP    &kp C_PREVIOUS                  &hml LC(UP_ARROW) UP_ARROW      &kp C_NEXT                        &msc MOVE_Y(15)     &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
 &trans                &kp C_VOLUME_DOWN  &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
-&hml LA(LC(T)) LC(T)  &trans             &kp HOME                        &kp C_PLAY                      &kp END                           &kp LC(SLASH)       &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS         &trans
+&hml LA(LC(T)) LC(T)  &trans             &kp HOME                        &kp C_PLAY                      &kp END                           &kp LC(SLASH)       &kp F9  &kp F10  &kp F11  &kp F12  &trans           &trans
                                                                          &trans                          &trans                            &trans              &trans  &trans   &trans
             >;
         };
@@ -252,7 +252,7 @@
             bindings = <
 &trans  &kp PRINTSCREEN  &kp F1  &kp F2   &kp F3   &kp F4     &msc MOVE_Y(15)   &kp C_PREVIOUS                  &hml LC(UP_ARROW) UP_ARROW      &kp C_NEXT                        &kp C_VOLUME_UP    &trans
 &trans  &kp INSERT       &kp F5  &kp F6   &kp F7   &kp F8     &msc MOVE_Y(-15)  &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &kp C_VOLUME_DOWN  &trans
-&trans  &kp CAPSLOCK     &kp F9  &kp F10  &kp F11  &kp F12    &kp LC(SLASH)     &kp HOME                        &kp C_PLAY                      &kp END                           &trans             &hml LA(LC(T)) LC(T)
+&trans  &trans           &kp F9  &kp F10  &kp F11  &kp F12    &kp LC(SLASH)     &kp HOME                        &kp C_PLAY                      &kp END                           &trans             &hml LA(LC(T)) LC(T)
                                  &trans   &trans   &trans     &trans            &trans                          &trans
             >;
         };
