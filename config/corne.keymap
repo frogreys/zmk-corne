@@ -161,7 +161,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base_en {
+        en_base {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -172,11 +172,11 @@
 &hml LEFT_WIN ESC  &kp Q     &kp W  &kp E      &kp R         &kp T                  &kp Y                 &kp U         &kp I      &kp O       &kp P                 &backspace_delete
 &kp LEFT_SHIFT     &kp A     &kp S  &kp D      &kp F         &kp G                  &kp H                 &kp J         &kp K      &kp L       &kp SEMICOLON         &kp RSHFT
 &kp TAB            &tkl 8 Z  &kp X  &kp C      &kp V         &kp B                  &kp N                 &kp M         &kp COMMA  &kp PERIOD  &tkl 9 RU_UNDERSCORE  &layer_ru
-                                    &kp LCTRL  &tkl 8 SPACE  &hml LEFT_ALT ENTER    &hml RIGHT_ALT ENTER  &tkr 9 SPACE  &kp RCTRL
+                                    &kp LCTRL  &tkl 2 SPACE  &hml LEFT_ALT ENTER    &hml RIGHT_ALT ENTER  &tkr 4 SPACE  &kp RCTRL
             >;
         };
 
-        base_ru {
+        ru_base {
             bindings = <
 &trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &kp RU_CYRILLIC_ZE  &kp RU_CYRILLIC_HA    &trans
 &trans  &kp RU_CYRILLIC_EF                      &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE   &trans
@@ -185,7 +185,7 @@
             >;
         };
 
-        left_numbs_en {
+        left_en_numbs {
             bindings = <
 &kp GRAVE  &kp DOLLAR    &kp AT_SIGN   &kp AMPERSAND  &hml UNDERSCORE MINUS  &kp PLUS         &kp ASTERISK          &kp SLASH              &kp EQUAL      &kp EXCLAMATION  &kp QUESTION    &trans
 &kp TILDE  &kp N1        &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp CARET        &kp LEFT_BRACE  &kp RIGHT_BRACE
@@ -194,7 +194,7 @@
             >;
         };
 
-        left_numbs_ru {
+        left_ru_numbs {
             bindings = <
 &en GRAVE  &en DOLLAR    &en AT_SIGN   &en AMPERSAND  &hml UNDERSCORE MINUS  &en PLUS         &en ASTERISK          &en SLASH              &en EQUAL      &en EXCLAMATION  &en QUESTION    &trans
 &en TILDE  &kp N1        &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5     &en LEFT_PARENTHESIS  &en RIGHT_PARENTHESIS  &en SEMICOLON  &en CARET        &en LEFT_BRACE  &en RIGHT_BRACE
@@ -203,16 +203,7 @@
             >;
         };
 
-        right_numbs_ru {
-            bindings = <
-&en GRAVE       &en DOLLAR        &en AT_SIGN  &en AMPERSAND  &hml UNDERSCORE MINUS  &en PLUS                 &en ASTERISK      &en SLASH     &en EQUAL     &en EXCLAMATION  &en QUESTION  &trans
-&en LEFT_BRACE  &en RIGHT_BRACE   &en CARET    &en SEMICOLON  &en LEFT_PARENTHESIS   &en RIGHT_PARENTHESIS    &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4     &kp NUMBER_5  &en TILDE
-&en LESS_THAN   &en GREATER_THAN  &en DOT      &en COMMA      &en LEFT_BRACKET       &en RIGHT_BRACKET        &kp NUMBER_6      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0  &en HASH
-                                               &en PERCENT    &trans                 &en BACKSLASH            &en SINGLE_QUOTE  &trans        &kp HASH
-            >;
-        };
-
-        right_numbs_en {
+        right_en_numbs {
             bindings = <
 &kp GRAVE       &kp DOLLAR        &kp AT_SIGN  &kp AMPERSAND  &hml UNDERSCORE MINUS  &kp PLUS                 &kp ASTERISK      &kp SLASH     &kp EQUAL     &kp EXCLAMATION  &kp QUESTION  &trans
 &kp LEFT_BRACE  &kp RIGHT_BRACE   &kp CARET    &kp SEMICOLON  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS    &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4     &kp NUMBER_5  &kp TILDE
@@ -221,7 +212,16 @@
             >;
         };
 
-        numbs_en {
+        right_ru_numbs {
+            bindings = <
+&en GRAVE       &en DOLLAR        &en AT_SIGN  &en AMPERSAND  &hml UNDERSCORE MINUS  &en PLUS                 &en ASTERISK      &en SLASH     &en EQUAL     &en EXCLAMATION  &en QUESTION  &trans
+&en LEFT_BRACE  &en RIGHT_BRACE   &en CARET    &en SEMICOLON  &en LEFT_PARENTHESIS   &en RIGHT_PARENTHESIS    &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4     &kp NUMBER_5  &en TILDE
+&en LESS_THAN   &en GREATER_THAN  &en DOT      &en COMMA      &en LEFT_BRACKET       &en RIGHT_BRACKET        &kp NUMBER_6      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0  &en HASH
+                                               &en PERCENT    &trans                 &en BACKSLASH            &en SINGLE_QUOTE  &trans        &kp HASH
+            >;
+        };
+
+        en_numbs {
             bindings = <
 &kp GRAVE       &kp DOLLAR       &kp AT_SIGN   &kp AMPERSAND  &hml UNDERSCORE MINUS  &kp PLUS                 &kp ASTERISK      &kp SLASH          &kp EQUAL     &kp EXCLAMATION  &kp QUESTION   &trans
 &kp TILDE       &kp N1           &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5             &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0   &kp HASH
@@ -230,7 +230,7 @@
             >;
         };
 
-        numbs_ru {
+        ru_numbs {
             bindings = <
 &en GRAVE       &en DOLLAR       &en AT_SIGN   &en AMPERSAND  &hml UNDERSCORE MINUS  &en PLUS                 &en ASTERISK      &en SLASH          &en EQUAL     &en EXCLAMATION  &en QUESTION   &trans
 &en TILDE       &kp N1           &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4           &kp NUMBER_5             &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0   &en HASH
@@ -261,7 +261,7 @@
             bindings = <
 &backspace_delete  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)     &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &none   &backspace_delete
 &trans             &kp PAGE_DOWN  &kp LC(LEFT_ARROW)      &kp LC(D)      &kp LC(RIGHT_ARROW)      &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &none   &none
-&mo 11             &trans         &kp LS(LC(TAB))         &none          &kp LC(TAB)              &alt_esc_next       &alt_esc_next     &mkp LCLK          &mkp MCLK          &mkp RCLK         &trans  &none
+&mo 11             &trans         &kp LS(LC(TAB))         &none          &kp LC(TAB)              &alt_esc_next       &alt_esc_next     &mkp LCLK          &mkp MCLK          &mkp RCLK         &trans  &mo 11
                                                           &trans         &trans                   &trans              &trans            &trans             &trans
             >;
         };
@@ -279,39 +279,24 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        ru_num {
+        on_mouse {
+            if-layers = <8 9>;
+            then-layer = <10>;
+        };
+
+        ru_numbs {
             if-layers = <1 6>;
             then-layer = <7>;
         };
 
-        on_navigation {
-            if-layers = <11>;
-            then-layer = <10>;
-        };
-
-        ru_navigation {
-            if-layers = <1 10>;
-            then-layer = <1>;
-        };
-
-        left_ru_num {
+        left_ru_numbs {
             if-layers = <1 2>;
             then-layer = <3>;
         };
 
-        right_num_ru {
-            if-layers = <1 5>;
-            then-layer = <4>;
-        };
-
-        on_numbs {
-            if-layers = <8 9>;
-            then-layer = <6>;
-        };
-
-        on_mouse {
-            if-layers = <8 9>;
-            then-layer = <10>;
+        right_ru_numbs {
+            if-layers = <1 4>;
+            then-layer = <5>;
         };
     };
 };
