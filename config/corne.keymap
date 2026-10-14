@@ -241,26 +241,26 @@
 
         left_navigation {
             bindings = <
-&backspace_delete     &kp C_VOLUME_UP    &kp C_PREVIOUS                  &hml LC(UP_ARROW) UP_ARROW      &kp C_NEXT                        &msc MOVE_Y(15)     &kp F1  &kp F2         &kp F3   &kp F4   &kp PRINTSCREEN  &trans
+&kp LC(R)             &kp C_VOLUME_UP    &kp HOME                        &hml LC(UP_ARROW) UP_ARROW      &kp END                           &msc MOVE_Y(15)     &kp F1  &kp F2         &kp F3   &kp F4   &kp PRINTSCREEN  &trans
 &trans                &trans             &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6         &kp F7   &kp F8   &trans           &trans
-&hml LA(LC(T)) LC(T)  &kp C_VOLUME_DOWN  &kp HOME                        &kp C_PLAY                      &kp END                           &kp LC(SLASH)       &kp F9  &kp F10        &kp F11  &kp F12  &kp INSERT       &trans
-                                                                         &trans                          &tkl 11 SPACE                     &kp LEFT_SHIFT      &trans  &tkr 11 SPACE  &trans
+&hml LA(LC(T)) LC(T)  &kp C_VOLUME_DOWN  &kp C_PREVIOUS                  &kp C_PLAY                      &kp C_NEXT                        &kp LC(SLASH)       &kp F9  &kp F10        &kp F11  &kp F12  &kp CAPSLOCK     &trans
+                                                                         &backspace_delete               &tkl 11 SPACE                     &kp LEFT_SHIFT      &trans  &tkr 11 SPACE  &trans
             >;
         };
 
         right_navigation {
             bindings = <
-&trans  &kp PRINTSCREEN  &kp F1  &kp F2   &kp F3         &kp F4     &msc MOVE_Y(15)   &kp C_PREVIOUS                  &hml LC(UP_ARROW) UP_ARROW      &kp C_NEXT                        &kp C_VOLUME_UP    &trans
+&trans  &kp PRINTSCREEN  &kp F1  &kp F2   &kp F3         &kp F4     &msc MOVE_Y(15)   &kp HOME                        &hml LC(UP_ARROW) UP_ARROW      &kp END                           &kp C_VOLUME_UP    &trans
 &trans  &trans           &kp F5  &kp F6   &kp F7         &kp F8     &msc MOVE_Y(-15)  &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &trans             &trans
-&trans  &kp INSERT       &kp F9  &kp F10  &kp F11        &kp F12    &kp LC(SLASH)     &kp HOME                        &kp C_PLAY                      &kp END                           &kp C_VOLUME_DOWN  &hml LA(LC(T)) LC(T)
-                                 &trans   &tkl 11 SPACE  &trans     &kp RIGHT_SHIFT   &tkr 11 SPACE                   &trans
+&trans  &kp CAPSLOCK     &kp F9  &kp F10  &kp F11        &kp F12    &kp LC(SLASH)     &kp C_PREVIOUS                  &kp C_PLAY                      &kp C_NEXT                        &kp C_VOLUME_DOWN  &hml LA(LC(T)) LC(T)
+                                 &trans   &tkl 11 SPACE  &trans     &kp RIGHT_SHIFT   &tkr 11 SPACE                   &backspace_delete
             >;
         };
 
         mouse {
             bindings = <
 &backspace_delete  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)     &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &kp KP_NUMLOCK  &backspace_delete
-&trans             &trans         &kp LC(LEFT_ARROW)      &kp LC(D)      &kp LC(RIGHT_ARROW)      &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &trans          &kp CAPSLOCK
+&trans             &trans         &kp LC(LEFT_ARROW)      &kp LC(D)      &kp LC(RIGHT_ARROW)      &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &trans          &kp INSERT
 &mo 12             &kp PAGE_DOWN  &kp LS(LC(TAB))         &none          &kp LC(TAB)              &alt_esc_next       &alt_esc_next     &mkp LCLK          &mkp MCLK          &mkp RCLK         &kp SCROLLLOCK  &mo 12
                                                           &trans         &trans                   &trans              &trans            &trans             &trans
             >;
@@ -308,9 +308,14 @@
             then-layer = <5>;
         };
 
-        on.numbs {
+        on_numbs {
             if-layers = <2 4>;
             then-layer = <6>;
+        };
+
+        on_mouse_alt {
+            if-layers = <11>;
+            then-layer = <10>;
         };
     };
 };
