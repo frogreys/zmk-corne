@@ -241,19 +241,19 @@
 
         left_navigation {
             bindings = <
-&kp LC(R)             &kp C_VOLUME_UP    &kp HOME                        &hml LC(UP_ARROW) UP_ARROW      &kp END                           &msc MOVE_Y(15)     &kp F1  &kp F2         &kp F3   &kp F4   &kp PRINTSCREEN  &trans
-&trans                &trans             &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6         &kp F7   &kp F8   &trans           &trans
-&hml LA(LC(T)) LC(T)  &kp C_VOLUME_DOWN  &kp C_PREVIOUS                  &kp C_PLAY                      &kp C_NEXT                        &kp LC(SLASH)       &kp F9  &kp F10        &kp F11  &kp F12  &kp CAPSLOCK     &trans
-                                                                         &backspace_delete               &tkl 11 SPACE                     &kp LEFT_SHIFT      &trans  &tkr 11 SPACE  &trans
+&kp LC(R)             &kp C_VOLUME_UP    &kp HOME                        &kp UP_ARROW       &kp END                           &msc MOVE_Y(15)     &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
+&trans                &trans             &hml LC(LEFT_ARROW) LEFT_ARROW  &kp DOWN_ARROW     &hml LC(RIGHT_ARROW) RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6   &kp F7   &kp F8   &trans           &trans
+&hml LA(LC(T)) LC(T)  &kp C_VOLUME_DOWN  &kp C_PREVIOUS                  &kp C_PLAY         &kp C_NEXT                        &kp LC(SLASH)       &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPSLOCK     &trans
+                                                                         &backspace_delete  &tkl 11 SPACE                     &kp LEFT_SHIFT      &trans  &trans   &trans
             >;
         };
 
         right_navigation {
             bindings = <
-&trans  &kp PRINTSCREEN  &kp F1  &kp F2   &kp F3         &kp F4     &msc MOVE_Y(15)   &kp HOME                        &hml LC(UP_ARROW) UP_ARROW      &kp END                           &kp C_VOLUME_UP    &trans
-&trans  &trans           &kp F5  &kp F6   &kp F7         &kp F8     &msc MOVE_Y(-15)  &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &trans             &trans
-&trans  &kp CAPSLOCK     &kp F9  &kp F10  &kp F11        &kp F12    &kp LC(SLASH)     &kp C_PREVIOUS                  &kp C_PLAY                      &kp C_NEXT                        &kp C_VOLUME_DOWN  &hml LA(LC(T)) LC(T)
-                                 &trans   &tkl 11 SPACE  &trans     &kp RIGHT_SHIFT   &tkr 11 SPACE                   &backspace_delete
+&trans  &kp PRINTSCREEN  &kp F1  &kp F2   &kp F3   &kp F4     &msc MOVE_Y(15)   &kp HOME                        &kp UP_ARROW       &kp END                           &kp C_VOLUME_UP    &trans
+&trans  &trans           &kp F5  &kp F6   &kp F7   &kp F8     &msc MOVE_Y(-15)  &hml LC(LEFT_ARROW) LEFT_ARROW  &kp DOWN_ARROW     &hml LC(RIGHT_ARROW) RIGHT_ARROW  &trans             &trans
+&trans  &kp CAPSLOCK     &kp F9  &kp F10  &kp F11  &kp F12    &kp LC(SLASH)     &kp C_PREVIOUS                  &kp C_PLAY         &kp C_NEXT                        &kp C_VOLUME_DOWN  &hml LA(LC(T)) LC(T)
+                                 &trans   &trans   &trans     &kp RIGHT_SHIFT   &tkr 11 SPACE                   &backspace_delete
             >;
         };
 
