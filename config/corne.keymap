@@ -169,18 +169,18 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&hml LEFT_WIN ESC  &kp Q     &kp W  &kp E      &kp R         &kp T                  &kp Y                 &kp U         &kp I      &kp O       &kp P                 &backspace_delete
-&kp LEFT_SHIFT     &kp A     &kp S  &kp D      &kp F         &kp G                  &kp H                 &kp J         &kp K      &kp L       &kp SEMICOLON         &kp RSHFT
-&kp TAB            &tkl 8 Z  &kp X  &kp C      &kp V         &kp B                  &kp N                 &kp M         &kp COMMA  &kp PERIOD  &tkl 9 RU_UNDERSCORE  &layer_ru
+&hml LEFT_WIN ESC  &kp Q     &kp W  &kp E      &kp R         &kp T                  &kp Y                 &kp U         &kp I      &kp O       &kp P             &backspace_delete
+&kp LEFT_SHIFT     &tkl 8 A  &kp S  &kp D      &kp F         &kp G                  &kp H                 &kp J         &kp K      &kp L       &tkl 9 SEMICOLON  &kp RSHFT
+&kp TAB            &kp Z     &kp X  &kp C      &kp V         &kp B                  &kp N                 &kp M         &kp COMMA  &kp PERIOD  &kp UNDERSCORE    &layer_ru
                                     &kp LCTRL  &tkl 2 SPACE  &hml LEFT_ALT ENTER    &hml RIGHT_ALT ENTER  &tkr 4 SPACE  &kp RCTRL
             >;
         };
 
         ru_base {
             bindings = <
-&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &kp RU_CYRILLIC_ZE  &kp RU_CYRILLIC_HA    &trans
-&trans  &kp RU_CYRILLIC_EF                      &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE   &trans
-&trans  &tkl 8 RU_CYRILLIC_YA                   &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &hml RU_CYRILLIC_SHORT_I RU_CYRILLIC_I    &kp RU_CYRILLIC_TE  &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU  &tkl 9 RU_CYRILLIC_E  &layer_en
+&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &kp RU_CYRILLIC_ZE  &kp RU_CYRILLIC_HA      &trans
+&trans  &tkl 8 RU_CYRILLIC_EF                   &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE  &tkl 9 RU_CYRILLIC_ZHE  &trans
+&trans  &kp RU_CYRILLIC_YA                      &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &hml RU_CYRILLIC_SHORT_I RU_CYRILLIC_I    &kp RU_CYRILLIC_TE  &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_E       &layer_en
                                                                       &trans              &trans              &trans                                    &trans              &trans                                            &trans
             >;
         };
@@ -241,27 +241,27 @@
 
         left_navigation {
             bindings = <
-&backspace_delete     &kp C_VOLUME_UP    &kp C_PREVIOUS                  &hml LC(UP_ARROW) UP_ARROW      &kp C_NEXT                        &msc MOVE_Y(15)     &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
-&trans                &kp C_VOLUME_DOWN  &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
-&hml LA(LC(T)) LC(T)  &trans             &kp HOME                        &kp C_PLAY                      &kp END                           &kp LC(SLASH)       &kp F9  &kp F10  &kp F11  &kp F12  &trans           &trans
-                                                                         &trans                          &trans                            &trans              &trans  &trans   &trans
+&backspace_delete     &kp C_VOLUME_UP    &kp C_PREVIOUS                  &hml LC(UP_ARROW) UP_ARROW      &kp C_NEXT                        &msc MOVE_Y(15)     &kp F1  &kp F2         &kp F3   &kp F4   &kp PRINTSCREEN  &trans
+&trans                &trans             &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6         &kp F7   &kp F8   &trans           &trans
+&hml LA(LC(T)) LC(T)  &kp C_VOLUME_DOWN  &kp HOME                        &kp C_PLAY                      &kp END                           &kp LC(SLASH)       &kp F9  &kp F10        &kp F11  &kp F12  &kp INSERT       &trans
+                                                                         &trans                          &tkl 10 SPACE                     &trans              &trans  &tkl 10 SPACE  &trans
             >;
         };
 
         right_navigation {
             bindings = <
-&trans  &kp PRINTSCREEN  &kp F1  &kp F2   &kp F3   &kp F4     &msc MOVE_Y(15)   &kp C_PREVIOUS                  &hml LC(UP_ARROW) UP_ARROW      &kp C_NEXT                        &kp C_VOLUME_UP    &trans
-&trans  &kp INSERT       &kp F5  &kp F6   &kp F7   &kp F8     &msc MOVE_Y(-15)  &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &kp C_VOLUME_DOWN  &trans
-&trans  &trans           &kp F9  &kp F10  &kp F11  &kp F12    &kp LC(SLASH)     &kp HOME                        &kp C_PLAY                      &kp END                           &trans             &hml LA(LC(T)) LC(T)
-                                 &trans   &trans   &trans     &trans            &trans                          &trans
+&trans  &kp PRINTSCREEN  &kp F1  &kp F2   &kp F3         &kp F4     &msc MOVE_Y(15)   &kp C_PREVIOUS                  &hml LC(UP_ARROW) UP_ARROW      &kp C_NEXT                        &kp C_VOLUME_UP    &trans
+&trans  &trans           &kp F5  &kp F6   &kp F7         &kp F8     &msc MOVE_Y(-15)  &hml LC(LEFT_ARROW) LEFT_ARROW  &hml LC(DOWN_ARROW) DOWN_ARROW  &hml LC(RIGHT_ARROW) RIGHT_ARROW  &trans             &trans
+&trans  &kp INSERT       &kp F9  &kp F10  &kp F11        &kp F12    &kp LC(SLASH)     &kp HOME                        &kp C_PLAY                      &kp END                           &kp C_VOLUME_DOWN  &hml LA(LC(T)) LC(T)
+                                 &trans   &tkl 10 SPACE  &trans     &trans            &tkl 10 SPACE                   &trans
             >;
         };
 
         mouse {
             bindings = <
 &backspace_delete  &kp PAGE_UP    &kp LG(LC(LEFT_ARROW))  &kp LG(LC(D))  &kp LG(LC(RIGHT_ARROW))  &msc MOVE_Y(15)     &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &kp KP_NUMLOCK  &backspace_delete
-&trans             &kp PAGE_DOWN  &kp LC(LEFT_ARROW)      &kp LC(D)      &kp LC(RIGHT_ARROW)      &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &kp SCROLLLOCK  &kp CAPSLOCK
-&mo 11             &trans         &kp LS(LC(TAB))         &kp INSERT     &kp LC(TAB)              &alt_esc_next       &alt_esc_next     &mkp LCLK          &mkp MCLK          &mkp RCLK         &trans          &mo 11
+&trans             &trans         &kp LC(LEFT_ARROW)      &kp LC(D)      &kp LC(RIGHT_ARROW)      &msc MOVE_Y(-15)    &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &trans          &kp CAPSLOCK
+&mo 11             &kp PAGE_DOWN  &kp LS(LC(TAB))         &kp INSERT     &kp LC(TAB)              &alt_esc_next       &alt_esc_next     &mkp LCLK          &mkp MCLK          &mkp RCLK         &kp SCROLLLOCK  &mo 11
                                                           &trans         &trans                   &trans              &trans            &trans             &trans
             >;
         };
@@ -297,6 +297,11 @@
         right_ru_numbs {
             if-layers = <1 4>;
             then-layer = <5>;
+        };
+
+        on.numbs {
+            if-layers = <2 4>;
+            then-layer = <6>;
         };
     };
 };
